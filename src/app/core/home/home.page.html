@@ -1,0 +1,69 @@
+<!-- header content -->
+<ion-header>
+	<ion-toolbar class="new-background-color">
+		 <ion-title class="ion-title">Rádio RaizUai</ion-title>
+		 <ion-buttons slot="end">
+			<button class="btn-style" ion-button icon-only (click)="openModal()">
+				<ion-icon name="alarm-outline" class="icon-size"></ion-icon>
+			</button>
+		 </ion-buttons>
+	</ion-toolbar>
+</ion-header>
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar color="none" style="border: none;">
+    <ion-buttons>
+      <ion-title class="ion-title">Rádio RaizUai</ion-title>
+      <button class="btn-style" ion-button item-right icon-only (click)="openModal()">
+        <ion-icon name="alarm-outline" class="icon-size"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- content -->
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>            
+              <ion-card class="card-style">
+								<ion-card-subtitle class="sleep-text" *ngIf="sleepScheduleTimer !== '' && sleepScheduleTimer !== 'Desligado'">
+									Desliga em {{sleepScheduleTimer}}</ion-card-subtitle>
+								<img class="img-logo" src="../../assets/img/logo-raiz-uai-oficial.png" />
+								<ion-card-header>
+									<ion-card-subtitle *ngIf="!musicName && !artistName" style="text-align: center;">........
+									</ion-card-subtitle>
+									<!-- <img *ngIf="musicName && artistName" style="width: 70px; height: 35px; margin-top: 10px;"
+										src="../../assets/img/audio-metter.png" /> -->
+									<ion-row *ngIf="musicName && artistName">
+										<IonCol class="ion-align-self-center onair ripple">Tocando Agora</IonCol>
+									</ion-row>
+									<div class="marquee">
+										<ion-card-subtitle class="sound-style">{{musicName}}</ion-card-subtitle>
+									</div>
+									<ion-card-title class="sound-style artist-style">{{artistName}}</ion-card-title>
+								</ion-card-header>
+							</ion-card>
+            <!-- social media -->
+						<ion-row>
+							<app-social-media></app-social-media>
+						</ion-row>
+					<!-- play/pause control footer -->
+					<ion-row>
+						<ion-range color="danger" class="range-align" min="0" max="1500" step="1" [disabled]="showPlayBtn" [(ngModel)]="volume"
+							(ionChange)="volumeControl()">
+							<ion-icon class="medium" slot="start" name="volume-off-outline"></ion-icon>
+							<ion-icon class="medium" slot="end" name="volume-high-outline"></ion-icon>
+						</ion-range>
+					</ion-row>
+					<ion-row class="play-stream">
+						<button clear ion-col ion-button class="btn-style" *ngIf="showPlayBtn" (click)="play()">
+							<ion-icon id="play-control" src="../../assets/icon/play.svg" class="huge"></ion-icon>
+						</button>
+						<button clear ion-col ion-button class="btn-style" *ngIf="!showPlayBtn" (click)="pause()">
+							<ion-icon id="pause-control" src="../../assets/icon/pause.svg" class="huge"></ion-icon>
+						</button>
+					</ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

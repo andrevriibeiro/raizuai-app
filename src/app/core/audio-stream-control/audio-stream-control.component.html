@@ -1,0 +1,15 @@
+<ion-range class="range-align" min="0" max="500" step="2" [disabled]="showPlayBtn" [(ngModel)]="volume"
+  (ionChange)="volumeControl()">
+  <ion-icon class="medium" slot="start" name="volume-off-outline"></ion-icon>
+  <ion-icon class="medium" slot="end" name="volume-high-outline"></ion-icon>
+</ion-range>
+<ion-grid class="grid-align">
+  <ion-row align-items-center id="media-controls">
+    <button clear ion-col ion-button class="btn-style" *ngIf="showPlayBtn" (click)="play()">
+      <ion-icon src="../../assets/icon/play.svg" class="huge"></ion-icon>
+    </button>
+    <button clear ion-col ion-button class="btn-style" *ngIf="!showPlayBtn" (click)="pause()">
+      <ion-icon src="../../assets/icon/pause.svg" class="huge"></ion-icon>
+    </button>
+  </ion-row>
+</ion-grid>

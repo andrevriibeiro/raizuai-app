@@ -1,0 +1,29 @@
+<ion-grid style="padding: 0px;">
+  <ion-row style="margin-right: 13px;">
+    <!-- facebook app -->
+    <ion-col size="3">
+      <button ion-fab fab-fixed color="primary" class="btn-style" (click)="openFacebookApp()">
+        <ion-icon src="../../../assets/icon/ic_facebook.svg" class="larger"></ion-icon>
+      </button>
+    </ion-col>
+    <!-- instagram app -->
+    <ion-col size="3">
+      <button ion-fab fab-fixed color="danger" class="btn-style" (click)="openInstagramApp()">
+        <ion-icon src="../../../assets/icon/ic_instagram.svg" class="larger"></ion-icon>
+      </button>
+    </ion-col>
+    <!-- whatsapp -->
+    <ion-col size="3">
+        <button ion-fab fab-fixed color="secondary" class="btn-style" (click)="openWhatsApp()">
+          <ion-icon src="../../../assets/icon/ic_whatsapp.svg" class="larger">
+          </ion-icon>
+        </button>
+    </ion-col>
+    <!-- share via apps -->
+    <ion-col size="3">
+      <button ion-fab fab-fixed color="secondary" class="btn-style" (click)="sharingApp()">
+        <ion-icon src="../../../assets/icon/ic_share.svg" class="larger"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

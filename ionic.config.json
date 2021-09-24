@@ -1,0 +1,13 @@
+{
+  "name": "raiz-uai-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/home",
+      "proxyUrl": "https://radion.jmhost.com.br"
+    }
+  ]
+}
